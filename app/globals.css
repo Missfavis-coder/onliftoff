@@ -1,0 +1,265 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* =========================
+   LIFTOFF DESIGN SYSTEM
+========================= */
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-destructive: var(--destructive);
+
+  /* Fonts */
+  --font-sans: var(--font-inter);
+  --font-heading: var(--font-recife);
+  --font-mono: var(--font-geist-mono);
+
+  /* Radius */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-2xl: 32px;
+}
+
+/* =========================
+   LIGHT MODE
+========================= */
+
+:root {
+  /* Backgrounds */
+  --background: #F9F7F2;
+  --foreground: #171717;
+
+  /* Cards */
+  --card: #ffffff;
+  --card-foreground: #1e1b2e;
+
+  /* Popover */
+  --popover: #ffffff;
+  --popover-foreground: #171717;
+
+  /* Primary */
+  --primary: #0f172a; /* slate-900 vibe */
+  --primary-foreground: #ffffff;
+
+  /* Secondary */
+  --secondary: #f3f0ed;
+  --secondary-foreground: #1f2937;
+
+  /* Muted */
+  --muted: #f5f3f1;
+  --muted-foreground: #6b7280;
+
+  /* Accent */
+  --accent: #eeebe8;
+  --accent-foreground: #111827;
+
+  /* UI */
+  --border: #e7e2dc;
+  --input: #e7e2dc;
+  --ring: rgba(15, 23, 42, 0.12);
+
+  /* Danger */
+  --destructive: #dc2626;
+
+  /* Shadows */
+  --shadow-card:
+    rgba(15, 23, 42, 0.04) 0px 2px 4px,
+    rgba(15, 23, 42, 0.08) 0px 10px 30px;
+
+  --container-width: 1150px;
+}
+
+/* =========================
+   DARK MODE
+========================= */
+
+.dark {
+  --background: #09090b;
+  --foreground: #fafafa;
+
+  --card: #111827;
+  --card-foreground: #f9fafb;
+
+  --popover: #111827;
+  --popover-foreground: #f9fafb;
+
+  --primary: #f9fafb;
+  --primary-foreground: #0f172a;
+
+  --secondary: #18181b;
+  --secondary-foreground: #f4f4f5;
+
+  --muted: #18181b;
+  --muted-foreground: #9ca3af;
+
+  --accent: #1f2937;
+  --accent-foreground: #ffffff;
+
+  --border: rgba(255, 255, 255, 0.08);
+  --input: rgba(255, 255, 255, 0.08);
+  --ring: rgba(255, 255, 255, 0.12);
+
+  --destructive: #ef4444;
+
+  --shadow-card:
+    rgba(0, 0, 0, 0.2) 0px 4px 12px,
+    rgba(0, 0, 0, 0.45) 0px 14px 40px;
+}
+
+/* =========================
+   BASE
+========================= */
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    font-family: var(--font-sans);
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: var(--font-sans);
+
+
+  }
+
+
+  input,
+  textarea,
+  select {
+    @apply bg-card text-foreground border rounded-md;
+    border-color: var(--input);
+  }
+
+  input:focus,
+  textarea:focus,
+  select:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 4px rgba(15, 23, 42, 0.08);
+  }
+
+  button {
+    @apply rounded-md;
+    cursor: pointer;
+  }
+}
+
+/* =========================
+   UTILITIES
+========================= */
+
+@layer utilities {
+  .container-width {
+    width: 100%;
+    max-width: var(--container-width);
+    margin-inline: auto;
+    padding-inline: 1.25rem;
+  }
+
+  .glass-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    box-shadow: var(--shadow-card);
+  }
+
+  .primary-button {
+    background: var(--primary);
+    color: var(--primary-foreground);
+    border-radius: var(--radius-md);
+    padding: 0.9rem 1.4rem;
+    font-weight: 600;
+    transition: all 0.2s ease;
+  }
+
+  .primary-button:hover {
+    background: #020617;
+    transform: translateY(-1px);
+  }
+
+  .secondary-button {
+    background: var(--secondary);
+    color: var(--foreground);
+    border-radius: var(--radius-md);
+    padding: 0.9rem 1.4rem;
+    transition: all 0.2s ease;
+  }
+
+  .secondary-button:hover {
+    background: #ebe7e4;
+  }
+
+  .section-spacing {
+    padding-block: 7rem;
+  }
+
+  .text-soft {
+    color: var(--muted-foreground);
+  }
+
+  .border-soft {
+    border-color: var(--border);
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+
+  100% {
+    transform: translateX(-33.333%);
+  }
+}
+
+@keyframes marquee-reverse {
+  0% {
+    transform: translateX(-33.333%);
+  }
+
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 28s linear infinite;
+}
+
+.animate-marquee-reverse {
+  animation: marquee-reverse 28s linear infinite;
+}

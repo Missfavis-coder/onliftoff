@@ -1,0 +1,232 @@
+---
+description: Use this skill when you need to understand the design system for Liftoff, a platform focused on connecting people through trusted networks with a human-centric and premium aesthetic.
+globs:
+  - "**/*"
+alwaysApply: false
+---
+
+```yaml
+brand: Liftoff
+mood: A trustworthy and sophisticated platform that feels human-centric, calm, and premium, blending classic typography with modern, soft UI.
+
+colors:
+  primary: "#2f274a" # Deep indigo for primary actions
+  primary-bright: "#403565" # Lighter indigo for hover states
+  primary-deep: "#1f1933" # Darker indigo for pressed states
+  on-primary: "#ffffff" # Text on primary surfaces
+  ink: "#181229" # Darkest purple-black for main headlines
+  ink-soft: "#2f274a" # Softer purple for body text and links
+  on-ink: "#ffffff" # Text on dark/ink surfaces
+  canvas: "#fcfaf9" # Warm, off-white primary page background
+  paper: "#ffffff" # Clean white for elevated surfaces like cards
+  cloud: "#f7f1f0" # Slightly warmer off-white for badges or tertiary surfaces
+  hairline: "#e9e3dd" # Muted beige for subtle borders
+  link: "#2f274a"
+  link-pressed: "#181229"
+  accent-violet: "#615fee" # A vibrant violet for highlights
+  accent-lime: "#e4f220" # A bright lime for charts or special accents
+
+typography:
+  display-xl: { fontFamily: "RecifeText SemiBold", fontSize: 80px, fontWeight: 600, lineHeight: 1.1 }
+  display-md: { fontFamily: "RecifeText SemiBold", fontSize: 35px, fontWeight: 600, lineHeight: 1.2 }
+  body-lg: { fontFamily: "Inter", fontSize: 21px, fontWeight: 400, lineHeight: 1.5 }
+  body-md: { fontFamily: "Inter", fontSize: 16px, fontWeight: 400, lineHeight: 1.5 }
+  body-emphasis: { fontFamily: "Inter", fontSize: 16px, fontWeight: 600, lineHeight: 1.5 }
+  caption-md: { fontFamily: "Inter", fontSize: 16px, fontWeight: 500, lineHeight: 1.4 }
+  caption-sm: { fontFamily: "Inter", fontSize: 13px, fontWeight: 500, lineHeight: 1.2 }
+  button-md: { fontFamily: "Inter", fontSize: 16px, fontWeight: 600, lineHeight: 1 }
+  link-md: { fontFamily: "Inter", fontSize: 16px, fontWeight: 500, lineHeight: 1 }
+
+rounded:
+  none: 0px
+  sm: 10px
+  md: 12px
+  lg: 16px
+  xl: 24px
+  xxl: 50px
+  pill: 500px
+
+spacing:
+  xxs: 8px
+  xs: 12px
+  sm: 20px
+  md: 24px
+  lg: 36px
+  xl: 50px
+  xxl: 60px
+  section: 150px
+
+shadows:
+  none: "none"
+  card: "rgba(37, 23, 42, 0.4) 0px 0px 1px 0px, rgba(37, 23, 42, 0.05) 0px 4px 8px 0px, rgba(37, 23, 42, 0.2) 0px 8px 48px 0px"
+
+components:
+  button-primary:
+    backgroundColor: "{colors.primary}"
+    textColor: "{colors.on-primary}"
+    typography: "{typography.button-md}"
+    rounded: "{rounded.pill}"
+    padding: "16px 28px"
+    border: "none"
+    shadow: "{shadows.none}"
+  button-primary-hover:
+    backgroundColor: "{colors.primary-bright}"
+  card:
+    backgroundColor: "{colors.paper}"
+    textColor: "{colors.ink-soft}"
+    typography: "{typography.body-md}"
+    rounded: "{rounded.xl}"
+    shadow: "{shadows.card}"
+    padding: "{spacing.md}"
+    border: "none"
+  input:
+    backgroundColor: "{colors.paper}"
+    textColor: "{colors.ink}"
+    typography: "{typography.body-md}"
+    rounded: "{rounded.md}"
+    padding: "12px 16px"
+    border: "1px solid {colors.hairline}"
+  input-focus:
+    border: "1px solid {colors.primary}"
+    shadow: "0 0 0 3px rgba(47, 39, 74, 0.1)"
+  link:
+    textColor: "{colors.link}"
+    typography: "{typography.link-md}"
+  link-hover:
+    textColor: "{colors.ink}"
+  navigation:
+    backgroundColor: "transparent"
+    padding: "{spacing.lg} {spacing.xl}"
+  avatar:
+    rounded: "{rounded.pill}"
+    size: "48px"
+  badge:
+    backgroundColor: "{colors.cloud}"
+    textColor: "{colors.ink-soft}"
+    typography: "{typography.caption-sm}"
+    rounded: "{rounded.md}"
+    padding: "4px 8px"
+```
+
+## Visual Theme & Atmosphere
+
+The Liftoff design system projects an atmosphere of calm confidence and sophisticated trust. It is tailored for a professional audience that values clarity, quality, and human connection over flashy trends. The visual theme is built on a foundation of warm, airy backgrounds using `{colors.canvas}`, which creates an immediate sense of welcome and reduces digital eye strain. This softness is contrasted with the gravitas of a deep indigo primary color, `{colors.primary}`, used exclusively for key actions, signaling importance and reliability. The typography is a key storyteller: a distinguished serif, "RecifeText SemiBold", is used for major headlines (`{typography.display-xl}`), lending an editorial, premium quality to the content, while the clean and highly legible sans-serif, "Inter", handles all UI and body text, ensuring functional clarity. The overall feeling is one of effortless quality, where every element has its purpose and there is ample space for content to breathe.
+
+Key Characteristics:
+*   **Elegant Typography:** A dual-font system pairing the classic, refined "RecifeText SemiBold" for headlines with the modern, functional "Inter" for all other text.
+*   **Warm Minimalism:** A restrained palette featuring a warm off-white `{colors.canvas}` and pure white `{colors.paper}`, creating a clean, uncluttered environment that feels inviting, not sterile.
+*   **Confident Accent:** The deep, stable `{colors.primary}` provides a strong anchor for calls-to-action, used sparingly to maximize its impact.
+*   **Soft & Approachable UI:** Generously rounded corners on all interactive elements and containers, from `{rounded.pill}` on buttons to `{rounded.xl}` on cards, create a friendly and accessible interface.
+*   **Dimensionality and Depth:** A signature complex shadow style, `{shadows.card}`, is used on floating elements to lift them off the page, creating a subtle 3D effect that guides the user's focus.
+*   **Generous Whitespace:** A commitment to open space, governed by the `{spacing}` scale, particularly the large `{spacing.section}` value, ensures a calm, focused user experience.
+*   **Human-Centric Visuals:** The system is designed to showcase people, using `{components.avatar}` and card-based profiles as central visual motifs.
+
+## Color Usage Rules
+
+The color system is intentional and hierarchical, designed to guide the user's attention and create a consistent, professional atmosphere. Every color has a specific role and should be used accordingly to maintain visual harmony and brand integrity.
+
+*   `{colors.primary}`: This is the brand's core action color. Its use must be restricted to primary calls-to-action, such as the main "Request access" button. It must appear at most twice per viewport to retain its significance. It should never be used for text, icons, or decorative elements.
+*   `{colors.ink}`: This is the primary text color for high-emphasis headlines, specifically those set in `{typography.display-xl}`. Its high contrast against `{colors.canvas}` ensures maximum readability for the most important messages on the page.
+*   `{colors.ink-soft}`: This slightly softer dark purple serves as the default for all body text (`{typography.body-md}`), subheadings (`{typography.body-lg}`), and interactive text links (`{components.link}`). It provides excellent readability with a less stark contrast than `{colors.ink}`, contributing to the overall calm aesthetic.
+*   `{colors.on-primary}`: This color is reserved exclusively for text and icons placed on a surface filled with `{colors.primary}`. In this system, it is always `{colors.paper}` (white).
+*   `{colors.canvas}`: This is the default background color for all pages. Its warm off-white tone creates an inviting and premium base layer for all other content.
+*   `{colors.paper}`: Use this for surfaces that need to be elevated above the main canvas, primarily for `{components.card}`. The pure white provides a crisp, clean background for content and works with `{shadows.card}` to create a sense of depth.
+*   `{colors.cloud}`: This tertiary surface color is used for smaller, contained elements like `{components.badge}`. It offers a subtle, warm differentiation from `{colors.paper}` without creating a strong visual distraction. It can also be used for hover states on list items or subtle decorative panels.
+*   `{colors.hairline}`: This muted beige is for subtle UI borders, such as on an inactive `{components.input}`. It should define a shape without drawing significant attention.
+*   `{colors.accent-violet}` and `{colors.accent-lime}`: These are high-energy accent colors and must be used with extreme prejudice. They are reserved for specific, isolated use cases such as data visualizations, celebratory micro-interactions, or feature spotlights. They should never be part of the core UI chrome.
+
+## Typography Hierarchy
+
+The typographic system is built on a sophisticated dual-font strategy. "RecifeText SemiBold" is reserved for display-level text, lending a timeless, editorial quality to headlines that establish brand character. "Inter," a highly legible and versatile grotesque, is used for all other UI text, from body copy to button labels, ensuring functional clarity and a modern feel. This clear separation of roles is fundamental to the brand's identity.
+
+| Role                | Token                      | Use                                                                        |
+| ------------------- | -------------------------- | -------------------------------------------------------------------------- |
+| Extra Large Display | `{typography.display-xl}`  | The main H1 headline on a page. Used only once per view.                   |
+| Medium Display      | `{typography.display-md}`  | Section titles or key callouts within components, such as a user's title.  |
+| Large Body          | `{typography.body-lg}`     | Subheadings and introductory paragraphs directly following an H1.          |
+| Medium Body         | `{typography.body-md}`     | The default style for all standard paragraph text and component content.   |
+| Emphasis Body       | `{typography.body-emphasis}` | For highlighting key phrases or data points within `{typography.body-md}`. |
+| Medium Caption      | `{typography.caption-md}`  | Metadata, such as user names or job titles associated with body text.      |
+| Small Caption       | `{typography.caption-sm}`  | The smallest UI text, used for tags and labels within `{components.badge}`. |
+| Button              | `{typography.button-md}`   | Text labels for all buttons, ensuring legibility and a clear action cue.   |
+| Link                | `{typography.link-md}`     | Standalone text links in navigation or inline within body copy.            |
+
+### Typography Principles:
+1.  **Strict Role Adherence:** The serif font, "RecifeText SemiBold," must never be used for functional or body text. It is exclusively for display (`display-xl`, `display-md`). Conversely, "Inter" is used for everything else.
+2.  **Establish Clear Hierarchy:** Font size and weight must always follow the established hierarchy. Never use a larger or heavier style for a semantically less important element.
+3.  **Prioritize Readability:** Body text (`{typography.body-md}` and `{typography.body-lg}`) features a generous line height of `1.5` to ensure comfortable reading of longer passages.
+4.  **Controlled Measure:** Text blocks should aim for a line length of 50-75 characters to prevent reader fatigue and maintain a graceful flow.
+5.  **Meaningful Emphasis:** Use `{typography.body-emphasis}` selectively to draw attention to critical information. Overuse will diminish its impact.
+
+## Component Patterns
+
+Components are the reusable building blocks of the UI. Each is designed to be consistent, accessible, and aligned with the brand's aesthetic. They must be composed using the established design tokens.
+
+*   **button-primary**: This is the most important interactive element, reserved for the primary conversion goal of a view. Its friendly `{rounded.pill}` shape and solid `{colors.primary}` background make it stand out. On hover, it subtly shifts to `{colors.primary-bright}` to provide clear feedback. The label must always use `{typography.button-md}` in `{colors.on-primary}`.
+*   **card**: The `{components.card}` is the primary container for discrete pieces of content, such as user profiles or summaries. It is defined by its `{colors.paper}` background, soft `{rounded.xl}` corners, and the signature `{shadows.card}` that lifts it off the `{colors.canvas}`. Internal padding must be generous, using at least `{spacing.md}` on all sides.
+*   **input**: Form inputs are designed for clarity and minimal distraction. In their default state, they have a simple `{colors.hairline}` border. When focused, the border color changes to `{colors.primary}` and a subtle outer glow appears (`{components.input-focus}`), providing a clear indication of the active field without being jarring.
+*   **link**: Navigation links, defined by `{components.link}`, are styled to be unobtrusive yet clear. They use `{colors.link}` text and do not have an underline by default. On hover, the text color darkens to `{colors.ink}`, providing sufficient feedback of interactivity.
+*   **navigation**: The main site navigation is minimalist and clean. It uses generous padding (`{spacing.lg} {spacing.xl}`) to create an airy feel and sits transparently over the top of the page content. Links within the navigation use the `{components.link}` style.
+*   **avatar**: The `{components.avatar}` is always a perfect circle (`{rounded.pill}`) and is used to represent users. It should be used at a consistent size within a given context (e.g., 48px). Avatars often overlap other elements like cards to create a more dynamic, layered composition that emphasizes human connection.
+*   **badge**: Badges are small, supplementary labels used to communicate status or add metadata. They use a soft `{colors.cloud}` background, `{rounded.md}` corners, and small `{typography.caption-sm}` text. They are often placed near the content they describe and may include a small icon to the left of the text.
+
+## Layout & Spacing
+
+The Liftoff layout is characterized by its generous use of whitespace, creating a calm, uncluttered, and focused user experience. All spacing is governed by a consistent scale, ensuring visual harmony and rhythm throughout the application.
+
+The core of the system is a flexible grid, likely a 12-column layout with a maximum content width of 1280px on large screens. Content within this grid is typically center-aligned, creating balanced and symmetrical compositions.
+
+The vertical rhythm is paramount. Major content sections must be separated by `{spacing.section}` (150px) of vertical space. This significant gap clearly delineates different topics and allows the user to process information in manageable chunks. Within sections, spacing between distinct components (like two separate cards) should be `{spacing.xl}` (50px). Spacing between related elements within a single component (such as an avatar and the text beside it) should be `{spacing.md}` (24px). The smallest gaps, between text lines or an icon and its label, use `{spacing.xxs}` (8px) or `{spacing.xs}` (12px).
+
+The page structure relies on a single, continuous `{colors.canvas}` background, often enhanced with a subtle, large-scale, slow-moving gradient to add depth and visual interest without being distracting. There is no concept of alternating light/dark "bands" for sections; the open, unified background is a key part of the brand's airy aesthetic.
+
+## Do's and Don'ts
+
+### Do's
+1.  **Do** anchor every page with a single, prominent H1 headline using `{typography.display-xl}`.
+2.  **Do** use `{colors.primary}` for one, and only one, primary call-to-action button per screen.
+3.  **Do** ensure all cards and floating elements use `{shadows.card}` to maintain a consistent visual depth.
+4.  **Do** use `{rounded.pill}` for avatars and primary action buttons to reinforce the soft, approachable aesthetic.
+5.  **Do** separate major page sections with `{spacing.section}` to create a clear visual hierarchy and breathing room.
+6.  **Do** place content on `{colors.paper}` cards to lift it from the `{colors.canvas}` background.
+7.  **Do** strictly adhere to the dual-font system: "RecifeText SemiBold" for headlines, "Inter" for everything else.
+8.  **Do** apply generous internal padding, at least `{spacing.md}`, to all container components like cards.
+
+### Don'ts
+1.  **Don't** use `{colors.primary}` for text, secondary actions, or decorative flourishes.
+2.  **Don't** set body copy or UI labels in the "RecifeText SemiBold" font.
+3.  **Don't** create flat components; interactive or layered elements must have a shadow.
+4.  **Don't** use sharp corners (`{rounded.none}`). The minimum radius for containers is `{rounded.sm}`.
+5.  **Don't** place elements closer than `{spacing.sm}` to each other unless they are intrinsically linked (e.g., icon and label).
+6.  **Don't** use multiple `{typography.display-xl}` headlines within the same viewport.
+7.  **Don't** use accent colors like `{colors.accent-violet}` for standard UI controls. Reserve them for highlighting data or special states.
+8.  **Don't** neglect whitespace. Avoid crowded layouts by consistently applying the `{spacing}` tokens.
+
+## Responsive Behavior
+
+The design is fluid and responsive, ensuring an optimal experience across all device sizes. The core principle is to maintain the calm, spacious feel of the brand, even on the smallest screens.
+
+| Breakpoint      | Dimensions      | Behavior                                                                                                                                                                                                            |
+| --------------- | --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Mobile          | < 480px         | The main navigation collapses into a hamburger menu. The `{typography.display-xl}` headline reduces in size to fit the viewport. The hero's multi-card layout simplifies to a single-column stack. All grids become 1-column. |
+| Mobile-Large    | 480px – 767px   | The layout remains single-column, but with increased horizontal margins. Font sizes may scale up slightly. Touch targets for all interactive elements must be a minimum of 44x44px.                                 |
+| Tablet          | 768px – 1023px  | The main navigation may remain collapsed or expand to show top-level links. Two-column grids for content become viable. The hero layout begins to show more complexity and overlap between elements.                   |
+| Desktop         | 1024px – 1279px | The full desktop experience. The navigation is fully expanded. The hero layout is displayed as intended. Content utilizes a multi-column grid within a fixed maximum width.                                       |
+| Desktop-Large   | ≥ 1280px        | The main content container's width is capped at ~1280px to maintain readability. The `{colors.canvas}` background and any decorative gradients extend to the full viewport width, creating an immersive feel.       |
+
+Image behavior is critical. On mobile, images should span the full width of the column. On desktop, they can be constrained within the grid or used as full-bleed background elements. In all cases, images should be optimized for fast loading without sacrificing quality.
+
+## Iteration Guide
+
+When building new UI or iterating on existing designs in the Liftoff style, follow these steps to ensure consistency and quality:
+
+1.  **Establish the Foundation:** Start every page with a `{colors.canvas}` background. Define the page's purpose with a single H1 element styled with `{typography.display-xl}` and `{colors.ink}`.
+2.  **Define the Primary Goal:** Identify the single most important action a user should take and implement it using a `{components.button-primary}`. No other button on the page should use `{colors.primary}`.
+3.  **Structure with Space:** Organize content into logical sections, using `{spacing.section}` as a separator. This creates a clear narrative flow and prevents the layout from feeling cluttered.
+4.  **Contain with Cards:** Group related information into `{components.card}` elements. Ensure each card has a `{colors.paper}` background, `{rounded.xl}` corners, and is elevated with `{shadows.card}`.
+5.  **Set the Type:** Use `{typography.body-md}` with `{colors.ink-soft}` for all standard paragraphs. Use `{typography.display-md}` for section headers. Apply `{typography.body-emphasis}` only to highlight critical words or data.
+6.  **Humanize with Avatars:** When representing people, use the `{components.avatar}` component. Compose these with cards and text to build out rich profile elements.
+7.  **Implement Feedback States:** Ensure all interactive elements, including links and buttons, have a clear hover and active state. Use `{components.button-primary-hover}` for primary buttons and `{components.link-hover}` for text links.
+8.  **Build Clear Forms:** When creating forms, use `{components.input}` for all fields. The default state should be subtle, with a `{colors.hairline}` border. The focus state must be prominent, using `{components.input-focus}` styles.
+9.  **Audit Spacing and Rhythm:** Before finalizing, review the entire layout against the `{spacing}` token scale. Check for consistent gaps between and within components to ensure visual harmony.
+10. **Simplify and Refine:** Critically evaluate the final design. Is every element necessary? Does the composition feel calm and focused? Remove any extraneous details to maintain the brand's minimalist and sophisticated aesthetic.
