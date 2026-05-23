@@ -11,10 +11,8 @@ export default function Hero() {
 
   return (
     <section className="relative overflow-hidden lg:px-6 px-4 md:pt-42 pt-36">
-      
-      {/* BG */}
       <motion.div
-        initial={{ opacity: 0, scale: 1.08 }}
+        initial={{ opacity: 0, scale: 1.05 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1.2, ease: "easeOut" }}
         className="absolute bottom-0 left-0 right-0 -z-10 h-[80vh] lg:h-[100vh] lg:max-w-9xl mx-auto w-full"
@@ -30,19 +28,18 @@ export default function Hero() {
 
       {/* CONTENT */}
       <div className="relative z-10 mx-auto flex max-w-6xl flex-col items-center lg:justify-center">
-        
         {/* TEXT */}
         <motion.div
-          initial={{ opacity: 0, y: 70 }}
+          initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
+          transition={{ duration: 0.8 }}
           className="max-w-4xl text-center"
         >
           <motion.h1
-            initial={{ opacity: 0, y: 40 }}
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1, duration: 0.8 }}
-            className="font-serif md:text-4xl text-3xl leading-[1.05] tracking-tight text-[#181229] lg:text-6xl font-semibold"
+            transition={{ delay: 0.15, duration: 0.8 }}
+            className="font-serif md:text-4xl text-3xl leading-[1.05] tracking-tight text-[#181229] lg:text-5xl font-semibold"
           >
             Find incredible people,
             <br />
@@ -50,9 +47,9 @@ export default function Hero() {
           </motion.h1>
 
           <motion.p
-            initial={{ opacity: 0, y: 24 }}
+            initial={{ opacity: 0, y: 25 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2, duration: 0.7 }}
+            transition={{ delay: 0.3, duration: 0.8 }}
             className="mx-auto md:mt-8 mt-6 max-w-4xl text-[15px] leading-relaxed text-neutral-600 md:text-lg"
           >
             A hiring and networking platform where exceptional people
@@ -60,11 +57,11 @@ export default function Hero() {
           </motion.p>
 
           <motion.button
-            whileHover={{ scale: 1.04 }}
-            whileTap={{ scale: 0.98 }}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3 }}
+            transition={{ delay: 0.45, duration: 0.7 }}
+            whileHover={{ scale: 1.03 }}
+            whileTap={{ scale: 0.96 }}
             onClick={() => {
               router.push("/connector-waitlist");
             }}
@@ -76,12 +73,11 @@ export default function Hero() {
 
         {/* FLOATING UI */}
         <div className="relative mt-10 h-[400px] w-full max-w-5xl">
-          
           {/* LEFT CARD */}
           <motion.div
-            initial={{ opacity: 0, x: -80, rotate: -4 }}
+            initial={{ opacity: 0, x: -60, rotate: -4 }}
             animate={{ opacity: 1, x: 0, rotate: 0 }}
-            transition={{ delay: 0.4, duration: 0.8 }}
+            transition={{ delay: 0.5, duration: 0.9 }}
             whileHover={{ y: -6 }}
             className="absolute lg:left-[2%] lg:top-12 md:top-10 top-0 lg:w-64 md:w-42 w-39 rounded-md border border-white/40 bg-white lg:p-5 md:p-3 p-2 shadow-2xl shadow-black/5 -space-y-1"
           >
@@ -113,9 +109,9 @@ export default function Hero() {
 
           {/* RIGHT CARD */}
           <motion.div
-            initial={{ opacity: 0, x: 80, rotate: 4 }}
+            initial={{ opacity: 0, x: 60, rotate: 4 }}
             animate={{ opacity: 1, x: 0, rotate: 0 }}
-            transition={{ delay: 0.55, duration: 0.8 }}
+            transition={{ delay: 0.65, duration: 0.9 }}
             whileHover={{ y: -6 }}
             className="absolute right-[2%] lg:top-20 md:top-50 top-40 lg:w-64 md:w-42 w-40 rounded-md border border-white/40 bg-white lg:py-5 md:py-3 lg:px-6 md:px-2 p-2 shadow-2xl shadow-black/5 -space-y-1"
           >
@@ -145,55 +141,61 @@ export default function Hero() {
             </p>
           </motion.div>
 
-          {/* CENTER */}
+          {/* CENTER CLUSTER */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
+            initial={{ opacity: 0, scale: 0.85 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.6, duration: 0.8 }}
+            transition={{ delay: 0.8, duration: 0.9 }}
             className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
           >
+            {/* AVATARS */}
             <div className="relative md:h-80 md:w-50 w-55">
-              
-              {/* FLOATING AVATARS */}
               <motion.div
-                animate={{ y: [0, -10, 0] }}
+                animate={{
+                  y: [0, -8, 0],
+                }}
+                transition={{
+                  duration: 4,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+                className="flex gap-4 relative"
+              >
+                <div className="absolute md:h-10 md:w-10 h-8 w-8 lg:-top-8 lg:-left-10 md:-left-[50%] -left-8 lg:opacity-100 opacity-30 blur-[3px] lg:blur-[0px] rounded-full border-2 border-white">
+                  <Image
+                    src="/user4.png"
+                    alt="Amber"
+                    fill
+                    className="object-cover"
+                  />
+
+                  <div className="absolute lg:flex hidden left-4 top-8 z-100 bg-white/70 p-2 shadow-md rounded-md backdrop-blur-lg font-bold">
+                    <Forward size={16} />
+                  </div>
+                </div>
+
+                <div className="relative">
+                  <div className="absolute lg:left-42 md:-left-40 -left-22 lg:-top-4 md:top-28 -top-20 md:h-10 md:w-10 h-8 w-8 rounded-full border-2 border-white lg:opacity-100 opacity-30 blur-[3px] lg:blur-[0px]">
+                    <Image
+                      src="/user6.png"
+                      alt="Amber"
+                      fill
+                      className="object-cover"
+                    />
+
+                    <div className="absolute left-4 top-8 z-100 bg-white/70 p-2 rounded-md backdrop-blur-lg font-bold lg:flex hidden shadow-md">
+                      <Forward size={16} />
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+
+              <motion.div
+                animate={{
+                  y: [0, 10, 0],
+                }}
                 transition={{
                   duration: 5,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
-                className="absolute md:h-10 md:w-10 h-8 w-8 lg:-top-8 lg:-left-10 md:-left-[50%] -left-8 lg:opacity-100 opacity-30 blur-[3px] lg:blur-[0px] rounded-full border-2 border-white"
-              >
-                <Image
-                  src="/user4.png"
-                  alt="Amber"
-                  fill
-                  className="object-cover rounded-full"
-                />
-              </motion.div>
-
-              <motion.div
-                animate={{ y: [0, 12, 0] }}
-                transition={{
-                  duration: 6,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                  delay: 0.4,
-                }}
-                className="absolute lg:left-42 md:-left-40 -left-22 lg:-top-4 md:top-28 -top-20 md:h-10 md:w-10 h-8 w-8 rounded-full border-2 border-white lg:opacity-100 opacity-30 blur-[3px] lg:blur-[0px]"
-              >
-                <Image
-                  src="/user6.png"
-                  alt="Amber"
-                  fill
-                  className="object-cover rounded-full"
-                />
-              </motion.div>
-
-              <motion.div
-                animate={{ y: [0, -14, 0] }}
-                transition={{
-                  duration: 7,
                   repeat: Infinity,
                   ease: "easeInOut",
                 }}
@@ -203,17 +205,20 @@ export default function Hero() {
                   src="/user9.png"
                   alt="Amber"
                   fill
-                  className="object-cover rounded-full"
+                  className="object-cover"
                 />
 
-                {/* RECOMMENDED */}
                 <motion.div
-                  initial={{ opacity: 0, scale: 0.9 }}
+                  initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
-                  transition={{ delay: 1 }}
+                  transition={{ delay: 1.2, duration: 0.5 }}
                   className="absolute lg:-right-28 lg:top-8 md:-top-10 lg:left-1/2 left-[97%] md:left-4 -top-14 lg:-translate-x-1/2 lg:translate-x-0 z-50 bg-white/70 px-3 py-2 flex gap-3 items-center rounded-md backdrop-blur-xl shadow-lg border border-white/40 whitespace-nowrap"
                 >
-                  <Sparkle size={14} fill="#000" className="text-black" />
+                  <Sparkle
+                    size={14}
+                    fill="#000"
+                    className="text-black"
+                  />
 
                   <div className="-space-y-1 text-[#181229]">
                     <div className="text-[10px] font-semibold">
@@ -228,43 +233,56 @@ export default function Hero() {
               </motion.div>
 
               <motion.div
-                animate={{ y: [0, 8, 0] }}
+                animate={{
+                  y: [0, -6, 0],
+                }}
                 transition={{
-                  duration: 5,
+                  duration: 4.5,
                   repeat: Infinity,
                   ease: "easeInOut",
-                  delay: 0.8,
                 }}
-                className="absolute lg:h-12 lg:w-12 h-8 w-8 md:top-20 -top-40 lg:left-2 left-78 rounded-full border-2 border-white text-black lg:opacity-100 opacity-60 blur-[2px] lg:blur-[0px]"
               >
-                <Image
-                  src="/user3.png"
-                  alt="Amber"
-                  fill
-                  className="object-cover rounded-full"
-                />
-              </motion.div>
+                <div className="absolute lg:h-12 lg:w-12 h-8 w-8 md:top-20 -top-40 lg:left-2 left-78 rounded-full border-2 border-white text-black lg:opacity-100 opacity-60 blur-[2px] lg:blur-[0px]">
+                  <Image
+                    src="/user3.png"
+                    alt="Amber"
+                    fill
+                    className="object-cover"
+                  />
 
-              <motion.div
-                animate={{ y: [0, -8, 0] }}
-                transition={{
-                  duration: 6,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                  delay: 1,
-                }}
-                className="absolute lg:-left-15 md:-left-20 left-[20%] lg:h-12 h-8 w-8 lg:w-12 md:top-42 -top-50 rounded-full border-2 border-white md:opacity-100 opacity-30 blur-[3px] lg:blur-[0px]"
-              >
-                <Image
-                  src="/user7.png"
-                  alt="Amber"
-                  fill
-                  className="object-cover rounded-full"
-                />
+                  <div className="absolute left-6 -top-10 z-100 bg-white/70 p-2 gap-2 items-center text-[10px] rounded-md backdrop-blur-lg shadow-md font-bold lg:flex hidden">
+                    <Forward size={16} />
+
+                    <div>
+                      <div className="font-bold">Shared</div>
+
+                      <div className="whitespace-nowrap font-light tracking-wide">
+                        Ambers&apos;s search
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div>
+                  <div className="absolute lg:-left-15 md:-left-20 left-[20%] lg:h-12 h-8 w-8 lg:w-12 md:top-42 -top-50 rounded-full border-2 border-white md:opacity-100 opacity-30 blur-[3px] lg:blur-[0px]">
+                    <Image
+                      src="/user7.png"
+                      alt="Amber"
+                      fill
+                      className="object-cover"
+                    />
+
+                    <div className="absolute left-4 top-8 z-100 bg-white/70 p-2 rounded-md backdrop-blur-lg font-bold lg:flex hidden shadow-md">
+                      <Forward size={16} />
+                    </div>
+                  </div>
+                </div>
               </motion.div>
             </div>
           </motion.div>
         </div>
+
+        {/* BACKGROUND IMAGE */}
       </div>
     </section>
   );
