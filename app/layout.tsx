@@ -11,8 +11,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Liftoff App",
-  description: "Hire through trusted connections.",
+  title: "Liftoff | Find incredible people, through people you trust",
+  description: "Find incredible people, though people you trust. A hiring and networking platform where incredible people connect - and start working together.",
 };
 
 export default function RootLayout({
